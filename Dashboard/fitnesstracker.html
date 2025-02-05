@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athlete-Edge | Tracking</title>
+    <link rel="stylesheet" href="fitnesstracker.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <header>
+            <h1>Edge-Dashboard</h1>
+            <nav>
+                <button class="nav-btn" data-target="profile">Profile</button>
+                <button class="nav-btn" data-target="activity">Activity</button>
+                <button class="nav-btn" data-target="workouts">Workouts</button>
+                <button class="nav-btn" data-target="progress">Progress</button>
+                <button class="nav-btn" data-target="goals">Goals</button>
+            </nav>
+        </header>
+
+        <main>
+            <section id="profile" class="dashboard-section">
+                <h2>User Profile</h2>
+                <form id="profile-form">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                    <label for="age">Age</label>
+                    <input type="number" id="age" required>
+                    <label for="weight">Weight (kg)</label>
+                    <input type="number" id="weight" step="0.1" required>
+                    <label for="height">Height (cm)</label>
+                    <input type="number" id="height" required>
+                    <label for="goal">Fitness Goal</label>
+                    <select id="goal" required>
+                        <option value="lose">Lose Weight</option>
+                        <option value="maintain">Maintain Weight</option>
+                        <option value="gain">Gain Muscle</option>
+                    </select>
+                    <button type="submit">Save Profile</button>
+                </form>
+                <div id="bmi-display"></div>
+            </section>
+
+            <section id="activity" class="dashboard-section">
+                <h2>Activity Tracker</h2>
+                <form id="activity-form">
+                    <label for="steps">Steps</label>
+                    <input type="number" id="steps" required>
+                    <label for="calories-burned">Calories Burned</label>
+                    <input type="number" id="calories-burned" required>
+                    <button type="submit">Log Activity</button>
+                </form>
+                <div id="activity-log"></div>
+            </section>
+
+            <section id="workouts" class="dashboard-section">
+                <h2>Workout Log</h2>
+                <form id="workout-form">
+                    <label for="workout-type">Workout Type</label>
+                    <select id="workout-type" required>
+                        <option value="running">Running</option>
+                        <option value="weightlifting">Weightlifting</option>
+                        <option value="yoga">Yoga</option>
+                        <option value="swimming">Swimming</option>
+                        <option value="cycling">Cycling</option>
+                    </select>
+                    <label for="duration">Duration (minutes)</label>
+                    <input type="number" id="duration" required>
+                    <button type="submit">Log Workout</button>
+                </form>
+                <div id="workout-log"></div>
+            </section>
+
+            <section id="progress" class="dashboard-section">
+                <h2>Progress Tracking</h2>
+                <div class="chart-container">
+                    <canvas id="progress-chart"></canvas>
+                </div>
+            </section>
+
+            <section id="goals" class="dashboard-section">
+                <h2>Goals</h2>
+                <form id="goal-form">
+                    <label for="goal-type">Goal Type</label>
+                    <select id="goal-type" required>
+                        <option value="steps">Daily Steps</option>
+                        <option value="workouts">Weekly Workouts</option>
+                    </select>
+                    <label for="goal-value">Goal Value</label>
+                    <input type="number" id="goal-value" required>
+                    <button type="submit">Set Goal</button>
+                </form>
+                <div id="goal-display"></div>
+            </section>
+
+            <section id="health-tip">
+                <h3>Daily Health Tip</h3>
+                <p id="tip-content"></p>
+            </section>
+        </main>
+    </div>
+    <script src="fitnesstracker.js"></script>
+</body>
+</html>
+
