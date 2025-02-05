@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise: Bench Press</title>
+    <link rel="stylesheet" href="shravan.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="C:\Users\Shravan\Desktop\VAP PROJECT\Workouts list\icon logo.avif" alt="Athlete Edge Logo" class="logo-img">
+                <span class="logo-text">Athlete Edge</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="C:\Users\Shravan\Desktop\VAP PROJECT\Main Page\main.html" class="nav-link">Home</a></li>
+                <li><a href="C:\Users\Shravan\Desktop\VAP PROJECT\Exercise Main page\ex.html" class="nav-link">Exercises</a></li>
+                <li><a href="C:\Users\Shravan\Desktop\VAP PROJECT\EdgeDashboard\fitnesstracker.html" class="nav-link">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="exercise-container">
+        <section class="video-section">
+            <div id="player"></div>
+        </section>
+        <section class="content-section">
+            <h1 id="exerciseTitle">Bench Press</h1>
+            <div id="exerciseDescription">
+                <p>The Bench Press is a compound exercise that primarily targets the upper body muscles, including:</p>
+                <ul>
+                    <li>Chest (Pectorals)</li>
+                    <li>Shoulders (Anterior Deltoids)</li>
+                    <li>Triceps</li>
+                    <li>Core (for stability)</li>
+                </ul>
+                <p>This exercise is excellent for building upper body strength, improving pushing power, and enhancing muscle definition.</p>
+                
+                <h2>How to Perform Bench Press:</h2>
+                <ol>
+                    <li>Lie flat on a bench with feet firmly planted on the ground</li>
+                    <li>Grip the bar slightly wider than shoulder-width, palms facing forward</li>
+                    <li>Unrack the bar and position it directly above your chest with arms fully extended</li>
+                    <li>Lower the bar slowly to your chest while keeping your elbows at a 45-degree angle</li>
+                    <li>Pause briefly when the bar reaches your chest</li>
+                    <li>Push the bar back up explosively until your arms are fully extended</li>
+                    <li>Repeat for the desired number of repetitions</li>
+                </ol>
+                <p>Keep your core engaged and maintain proper form to avoid injuries and maximize strength gains.</p>
+            </div>
+            
+            
+        </section>
+    </main>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="shravan.js"></script>
+    <script>
+        // Load the IFrame Player API code asynchronously.
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      
+        let player;
+      
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '360',
+                width: '640',
+                videoId: 'SCVCLChPQFY', // This is a sample video ID for squats
+                playerVars: {
+                    'playsinline': 1
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+      
+        function onPlayerReady(event) {
+            // You can add any initialization logic here
+            console.log('Player is ready');
+        }
+      
+        function onPlayerStateChange(event) {
+            // You can add logic for different player states here
+            // For example, you might want to update the UI when the video ends
+            if (event.data == YT.PlayerState.ENDED) {
+                console.log('Video has ended');
+            }
+        }
+      
+        // You can add more functions to control the video playback if needed
+        function playVideo() {
+            player.playVideo();
+        }
+      
+        function pauseVideo() {
+            player.pauseVideo();
+        }
+      
+        function stopVideo() {
+            player.stopVideo();
+        }
+      
+        // Example of how you might use these functions
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // You could add event listeners to buttons to control the video
+            // For example:
+            // document.getElementById('playButton').addEventListener('click', playVideo);
+            // document.getElementById('pauseButton').addEventListener('click', pauseVideo);
+            // document.getElementById('stopButton').addEventListener('click', stopVideo);
+        });
+      </script>
+</body>
+</html>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f4f4;
+      }
+      
+      header {
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+      }
+      
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+      
+      .logo-img {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+      }
+      
+      .logo-text {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+      }
+      
+      .nav-links {
+        display: flex;
+        list-style: none;
+      }
+      
+      .nav-link {
+        text-decoration: none;
+        color: #333;
+        margin-left: 1.5rem;
+        font-weight: 500;
+      }
+      
+      .exercise-container {
+        display: flex;
+        margin-top: 80px;
+        padding: 2rem;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .video-section {
+        flex: 1;
+        margin-right: 2rem;
+        padding-top: 150px;
+        padding-right: 50px;
+      }
+      
+      #player {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+      }
+      
+      .content-section {
+        flex: 1;
+      }
+      
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #2c3e50;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #2c3e50;
+      }
+      
+      p {
+        margin-bottom: 1rem;
+      }
+      
+      ul,
+      ol {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+      }
+      
+      @media (max-width: 768px) {
+        .exercise-container {
+          flex-direction: column;
+        }
+      
+        .video-section {
+          margin-right: 0;
+          margin-bottom: 2rem;
+        }
+      
+        nav {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      
+        .nav-links {
+          margin-top: 1rem;
+        }
+      
+        .nav-link {
+          margin-left: 0;
+          margin-right: 1.5rem;
+        }
+      }
+      
+      
+</style>
