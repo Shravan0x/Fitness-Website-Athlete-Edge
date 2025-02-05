@@ -1,46 +1,46 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Exercise data
+   
     const exercises = [
       {
         name: "Squats ",
         image: "https://tse2.mm.bing.net/th?id=OIP.MVr2WPuiPoshnnnzDAqNRAHaD7&pid=Api&P=0&h=220",
-        href: "file:///C:/Users/Shravan/Desktop/VAP%20PROJECT/Workouts%20list/Squats.html",
+        href: "#",
       },
       {
         name: "Deadlifts",
         image: "https://tse4.mm.bing.net/th?id=OIP.YRawD2-Ta4xFCH-XjfVf8wHaE7&pid=Api&P=0&h=220",
-        href: "file:///C:/Users/Shravan/Desktop/VAP%20PROJECT/Workouts%20list/Deadlifts.html",
+        href: "#",
       },
       {
         name: "Bench Press",
         image: "https://stuffoholics.com/wp-content/uploads/2019/03/Dumbbell-Bench-Press-3.jpg",
-        href: "file:///C:/Users/Shravan/Desktop/VAP%20PROJECT/Workouts%20list/Benchpress.html",
+        href: "#",
       },
       {
         name: "Shoulder Press",
         image: "https://tse1.mm.bing.net/th?id=OIP.9Lww6IsswI_z-KQMe4dyhAHaE8&pid=Api&P=0&h=220",
-        href: "file:///C:/Users/Shravan/Desktop/VAP%20PROJECT/Workouts%20list/shoulderpress.html",
+        href: "#",
       },
       {
         name: "Pull-ups",
         image: "https://tse1.mm.bing.net/th?id=OIP.B6gb8jlCaFxWRNik_QnGegHaEK&pid=Api&P=0&h=220",
-        href: "file:///C:/Users/Shravan/Desktop/VAP%20PROJECT/Workouts%20list/pullups.html",
+        href: "#",
       },
       {
         name: "Lunges",
         image:
           "http://media2.popsugar-assets.com/files/2015/08/25/683/n/1922398/9d0f2828022f72ea_5243721bca9f634a_lungeh2YfAF.xxxlarge_2x/i/Lunge.jpg",
-        href: "file:///C:/Users/Shravan/Desktop/VAP%20PROJECT/Workouts%20list/lunges.html",
+        href: "#",
       },
       {
         name: "Push-ups",
         image: "https://tse4.mm.bing.net/th?id=OIP.Jqy4vSMEG4_foq884y2cxgHaD4&pid=Api&P=0&h=220",
-        href: "file:///C:/Users/Shravan/Desktop/VAP%20PROJECT/Workouts%20list/pushup.html",
+        href: "#",
       },
       {
         name: "Plank ",
         image: "https://tse4.mm.bing.net/th?id=OIP.kr66UaLJZJiEacArEfwVKAHaE7&pid=Api&P=0&h=220",
-        href: "file:///C:/Users/Shravan/Desktop/VAP%20PROJECT/Workouts%20list/planks.html",
+        href: "#",
       },
       {
         name: "Jump Squats",
@@ -51,83 +51,83 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         name: "Burpees",
         image: "https://tse1.mm.bing.net/th?id=OIP.6UaOV1e8IJZgUTGwIoW7tQHaEK&pid=Api&P=0&h=220",
-        href: "file:///C:/Users/Shravan/Desktop/VAP%20PROJECT/Workouts%20list/Burpees.html",
+        href: "#",
       },
       {
         name: " Wall Sit",
         image: "https://tse4.mm.bing.net/th?id=OIP.d69TtkDt3C0E6BHrXi6guwHaEt&pid=Api&P=0&h=220",
-        href: "file:///C:/Users/Shravan/Desktop/VAP%20PROJECT/Workouts%20list/wallsit.html",
+        href: "#",
       },
       {
         name: "Triceps Dips ",
         image: "https://tse3.mm.bing.net/th?id=OIP.nwTGhePDdZcHIJ13AA7plAHaFj&pid=Api&P=0&h=220",
-        href: "",
+        href: "#",
       },
       {
         name: "Jump Rope",
         image: "https://tse4.mm.bing.net/th?id=OIP.ALgtc7r2kfAF-9-Fpw5OfgHaE8&pid=Api&P=0&h=220",
-        href: "file:///C:/Users/Shravan/Desktop/VAP%20PROJECT/Workouts%20list/Jumpropes.html",
+        href: "#",
       },
       {
         name: "High Knees",
         image: "https://tse1.mm.bing.net/th?id=OIP.FHyuRIzM7708C0lWnURVmQHaD4&pid=Api&P=0&h=220",
-        href: "file:///C:/Users/Shravan/Desktop/VAP%20PROJECT/Workouts%20list/HighKnees.html",
+        href: "#",
       },
       {
         name: "Sprint Intervals",
         image: "https://experiencelife.lifetime.life/wp-content/uploads/2023/05/ja23-uyg-sit-1367872098.jpg",
-        href: "file:///C:/Users/Shravan/Desktop/VAP%20PROJECT/Workouts%20list/sprint.html",
+        href: "#",
       },
       {
         name: "Box Jumps",
         image: "https://i.pinimg.com/originals/5e/14/2f/5e142fce85b3fd4b34963fe7cc3e3251.jpg",
-        href: "file:///C:/Users/Shravan/Desktop/VAP%20PROJECT/Workouts%20list/boxjump.html",
+        href: "#",
       },
       {
         name: "Battle Ropes",
         image:
           "https://www.healthxtips.com/wp-content/uploads/2021/06/battle-rope-exercises-for-beginners_2-1280x796.jpg",
-        href: "file:///C:/Users/Shravan/Desktop/VAP%20PROJECT/Workouts%20list/battleropes.html",
+        href: "#",
       },
       {
         name: "Mountain Climbers ",
         image: "https://tse1.mm.bing.net/th?id=OIP.lsPDmoYUXzkv6NcyoO9JcgHaEK&pid=Api&P=0&h=220",
-        href: "file:///C:/Users/Shravan/Desktop/VAP%20PROJECT/Workouts%20list/mountainclimb.html",
+        href: "#",
       },
       {
         name: "Adho Mukha Svanasana",
         image: "https://tse3.mm.bing.net/th?id=OIP.CaJvq8yA9I1tObriU16E_wHaEo&pid=Api&P=0&h=220",
-        href: "file:///C:/Users/Shravan/Desktop/VAP%20PROJECT/Workouts%20list/savasana.html",
+        href: "#",
       },
       {
         name: "Balasana",
         image: "https://tse1.mm.bing.net/th?id=OIP.PT7sZAR0QKdWZuDM8ru7UAHaE8&pid=Api&P=0&h=220",
-        href: "file:///C:/Users/Shravan/Desktop/VAP%20PROJECT/Workouts%20list/balasana.html",
+        href: "#",
       },
       {
         name: "Bhujangasana",
         image:
           "https://i0.wp.com/www.theyogihut.org/wp-content/uploads/2021/09/Bhujangasana-scaled.jpg?fit=2560%2C1707&ssl=1",
-        href: "file:///C:/Users/Shravan/Desktop/VAP%20PROJECT/Workouts%20list/Bhujangasana.html",
+        href: "#",
       },
       {
         name: "Virabhadrasana II",
         image: "https://tse4.mm.bing.net/th?id=OIP.6J4FYDVdc3000TVf2aOAeQHaGU&pid=Api&P=0&h=220",
-        href: "file:///C:/Users/Shravan/Desktop/VAP%20PROJECT/Workouts%20list/virabhadrasana.html",
+        href: "#",
       },
       {
         name: "Vrikshasana",
         image: "https://tse2.mm.bing.net/th?id=OIP.VsYF7UpPhKihB-XnCUtKRQHaIV&pid=Api&P=0&h=220",
-        href: "file:///C:/Users/Shravan/Desktop/VAP%20PROJECT/Workouts%20list/vrikshasana.html",
+        href: "#",
       },
       {
         name: "Paschimottanasana",
         image: "https://www.gaia.com/wp-content/uploads/paschimottanasana-seated-forward-bend-1024x576.jpg",
-        href: "file:///C:/Users/Shravan/Desktop/VAP%20PROJECT/Workouts%20list/pchm.html",
+        href: "#",
       },
     ]
   
-    // Toggle filter groups
+    
     const filterToggles = document.querySelectorAll(".filter-toggle")
     filterToggles.forEach((toggle) => {
       toggle.addEventListener("click", () => {
@@ -137,7 +137,6 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     })
   
-    // Pagination setup
     const itemsPerPage = 8
     let currentPage = 1
   
@@ -192,11 +191,11 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     }
   
-    // Initialize the page
+
     displayExercises(currentPage)
     setupPagination()
   
-    // Sidebar toggle for mobile
+
     const sidebar = document.querySelector(".sidebar")
     const toggleSidebar = document.createElement("button")
     toggleSidebar.classList.add("toggle-sidebar")
@@ -207,14 +206,13 @@ document.addEventListener("DOMContentLoaded", () => {
       sidebar.classList.toggle("active")
     })
   
-    // Close sidebar when clicking outside
     document.addEventListener("click", (e) => {
       if (!sidebar.contains(e.target) && !toggleSidebar.contains(e.target)) {
         sidebar.classList.remove("active")
       }
     })
   
-    // Personalized Workout Functionality
+
     const getPersonalizedWorkoutBtn = document.getElementById("getPersonalizedWorkout")
     const modal = document.getElementById("workoutModal")
     const closeModal = document.getElementsByClassName("close")[0]
