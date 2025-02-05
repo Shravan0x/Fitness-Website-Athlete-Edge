@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Library</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="me.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="C:\Users\Shravan\Desktop\VAP PROJECT\Exercise Main page\exercise images\icon logo.avif" alt="Athlete-Edge" class="logo-img">
+                <span class="logo-text">Athlete Edge</span>
+            </a>
+            <div class="nav-links">
+                <a href="#" class="nav-link">Workouts</a>
+                <a href="C:\Users\Shravan\Desktop\VAP PROJECT\Nutrition Main page\nutrition.html" class="nav-link">Nutrition</a>
+                <a href="C:\Users\Shravan\Desktop\VAP PROJECT\EdgeDashboard\fitnesstracker.html" class="nav-link">Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="filter-section">
+                <h2>Filter Workouts</h2>
+                
+                <div class="filter-group">
+                    <button class="filter-toggle">
+                        <span>Workout Type</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="filter-content">
+                        <label><input type="checkbox" name="workout-type" value="strength"> Strength</label>
+                        <label><input type="checkbox" name="workout-type" value="cardio"> Cardio</label>
+                        <label><input type="checkbox" name="workout-type" value="flexibility"> Flexibility</label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <button class="filter-toggle">
+                        <span>Fitness Level</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="filter-content">
+                        <label><input type="checkbox" name="fitness-level" value="beginner"> Beginner</label>
+                        <label><input type="checkbox" name="fitness-level" value="intermediate"> Intermediate</label>
+                        <label><input type="checkbox" name="fitness-level" value="advanced"> Advanced</label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <button class="filter-toggle">
+                        <span>Duration</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="filter-content">
+                        <label><input type="checkbox" name="duration" value="short"> Short (0-15 min)</label>
+                        <label><input type="checkbox" name="duration" value="medium"> Medium (15-30 min)</label>
+                        <label><input type="checkbox" name="duration" value="long"> Long (30+ min)</label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <button class="filter-toggle">
+                        <span>Equipment</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="filter-content">
+                        <label><input type="checkbox" name="equipment" value="none"> No Equipment</label>
+                        <label><input type="checkbox" name="equipment" value="dumbbells"> Dumbbells</label>
+                        <label><input type="checkbox" name="equipment" value="resistance-bands"> Resistance Bands</label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <button class="filter-toggle">
+                        <span>Target Area</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="filter-content">
+                        <label><input type="checkbox" name="target-area" value="upper-body"> Upper Body</label>
+                        <label><input type="checkbox" name="target-area" value="lower-body"> Lower Body</label>
+                        <label><input type="checkbox" name="target-area" value="core"> Core</label>
+                    </div>
+                </div>
+                <button id="getPersonalizedWorkout" class="personalized-workout-btn">Get Personalized Workout</button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="container">
+            <h1>Exercise Library</h1>
+            <div class="title-underline"></div>
+            <p class="intro">
+                Welcome to our Exercise Library! Here, you'll find a curated selection of exercises designed to help you achieve your fitness goals. Each entry includes detailed descriptions, benefits, and instructional videos to guide you through proper form and technique.
+            </p>
+            
+            <div class="exercise-grid" id="exerciseGrid">
+                <!-- Exercise cards will be added via JavaScript -->
+            </div>
+
+            <div class="pagination" id="pagination">
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button class="next">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="me.js"></script>
+    <div id="workoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Your Personalized Workout</h2>
+            <div id="personalizedWorkout"></div>
+        </div>
+    </div>
+</body>
+</html>
+
