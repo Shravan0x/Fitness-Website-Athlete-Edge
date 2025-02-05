@@ -4,126 +4,126 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         name: "Squats ",
         image: "https://tse2.mm.bing.net/th?id=OIP.MVr2WPuiPoshnnnzDAqNRAHaD7&pid=Api&P=0&h=220",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
       {
         name: "Deadlifts",
         image: "https://tse4.mm.bing.net/th?id=OIP.YRawD2-Ta4xFCH-XjfVf8wHaE7&pid=Api&P=0&h=220",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
       {
         name: "Bench Press",
         image: "https://stuffoholics.com/wp-content/uploads/2019/03/Dumbbell-Bench-Press-3.jpg",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
       {
         name: "Shoulder Press",
         image: "https://tse1.mm.bing.net/th?id=OIP.9Lww6IsswI_z-KQMe4dyhAHaE8&pid=Api&P=0&h=220",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
       {
         name: "Pull-ups",
         image: "https://tse1.mm.bing.net/th?id=OIP.B6gb8jlCaFxWRNik_QnGegHaEK&pid=Api&P=0&h=220",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
       {
         name: "Lunges",
         image:
           "http://media2.popsugar-assets.com/files/2015/08/25/683/n/1922398/9d0f2828022f72ea_5243721bca9f634a_lungeh2YfAF.xxxlarge_2x/i/Lunge.jpg",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
       {
         name: "Push-ups",
         image: "https://tse4.mm.bing.net/th?id=OIP.Jqy4vSMEG4_foq884y2cxgHaD4&pid=Api&P=0&h=220",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
       {
         name: "Plank ",
         image: "https://tse4.mm.bing.net/th?id=OIP.kr66UaLJZJiEacArEfwVKAHaE7&pid=Api&P=0&h=220",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
       {
         name: "Jump Squats",
         image:
           "https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2021/12/02031718/begini-cara-squat-jump-bisa-melatih-otot-tubuh-halodoc.jpg.webp",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
       {
         name: "Burpees",
         image: "https://tse1.mm.bing.net/th?id=OIP.6UaOV1e8IJZgUTGwIoW7tQHaEK&pid=Api&P=0&h=220",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
       {
         name: " Wall Sit",
         image: "https://tse4.mm.bing.net/th?id=OIP.d69TtkDt3C0E6BHrXi6guwHaEt&pid=Api&P=0&h=220",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
       {
         name: "Triceps Dips ",
         image: "https://tse3.mm.bing.net/th?id=OIP.nwTGhePDdZcHIJ13AA7plAHaFj&pid=Api&P=0&h=220",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
       {
         name: "Jump Rope",
         image: "https://tse4.mm.bing.net/th?id=OIP.ALgtc7r2kfAF-9-Fpw5OfgHaE8&pid=Api&P=0&h=220",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
       {
         name: "High Knees",
         image: "https://tse1.mm.bing.net/th?id=OIP.FHyuRIzM7708C0lWnURVmQHaD4&pid=Api&P=0&h=220",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
       {
         name: "Sprint Intervals",
         image: "https://experiencelife.lifetime.life/wp-content/uploads/2023/05/ja23-uyg-sit-1367872098.jpg",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
       {
         name: "Box Jumps",
         image: "https://i.pinimg.com/originals/5e/14/2f/5e142fce85b3fd4b34963fe7cc3e3251.jpg",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
       {
         name: "Battle Ropes",
         image:
           "https://www.healthxtips.com/wp-content/uploads/2021/06/battle-rope-exercises-for-beginners_2-1280x796.jpg",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
       {
         name: "Mountain Climbers ",
         image: "https://tse1.mm.bing.net/th?id=OIP.lsPDmoYUXzkv6NcyoO9JcgHaEK&pid=Api&P=0&h=220",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
       {
         name: "Adho Mukha Svanasana",
         image: "https://tse3.mm.bing.net/th?id=OIP.CaJvq8yA9I1tObriU16E_wHaEo&pid=Api&P=0&h=220",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
       {
         name: "Balasana",
         image: "https://tse1.mm.bing.net/th?id=OIP.PT7sZAR0QKdWZuDM8ru7UAHaE8&pid=Api&P=0&h=220",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
       {
         name: "Bhujangasana",
         image:
           "https://i0.wp.com/www.theyogihut.org/wp-content/uploads/2021/09/Bhujangasana-scaled.jpg?fit=2560%2C1707&ssl=1",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
       {
         name: "Virabhadrasana II",
         image: "https://tse4.mm.bing.net/th?id=OIP.6J4FYDVdc3000TVf2aOAeQHaGU&pid=Api&P=0&h=220",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
       {
         name: "Vrikshasana",
         image: "https://tse2.mm.bing.net/th?id=OIP.VsYF7UpPhKihB-XnCUtKRQHaIV&pid=Api&P=0&h=220",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
       {
         name: "Paschimottanasana",
         image: "https://www.gaia.com/wp-content/uploads/paschimottanasana-seated-forward-bend-1024x576.jpg",
-        href: "#",
+        href: "<!-- Path to Workouts Page -->",
       },
     ]
   
