@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Athlete Edge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: white;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #444;
+            margin-bottom: 1rem;
+        }
+
+        .location-select {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-left: 0.5rem;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 1rem;
+        }
+
+        .tab {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .tab.active {
+            color: #ff0400;
+            border-bottom: 2px solid #ff0400;
+        }
+
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .job-card {
+            padding: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .job-card:hover {
+            border-color: #ff0400;
+        }
+
+        .job-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .job-location {
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .location-icon {
+            width: 16px;
+            height: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Project Team is needed in 
+                <select class="location-select" id="locationFilter">
+                    <option value="all">IT Field</option>
+                    <option value="Boston">Frontend Dev</option>
+                    <option value="Kiev">Backend Dev</option>
+                    <option value="Japan">Ux Ui</option>
+                    <option value="Washington">Full Stack Dev</option>
+                </select>
+            </h1>
+        </header>
+
+        <div class="tabs">
+            <button class="tab active" data-category="all">ALL POSITIONS</button>
+            <button class="tab" data-category="data">Web Developer</button>
+            <button class="tab" data-category="engineering">Content Writer/Editor</button>
+            <button class="tab" data-category="marketing"> Fitness Expert/Trainer (Consultant)</button>
+        </div>
+
+        <div class="jobs-grid" id="jobsGrid">
+            <!-- Jobs will be inserted here by JavaScript -->
+        </div>
+    </div>
+    
+    <script>
+        const jobs = [
+            { title: ' Senior Software Engineer', location: '', category: 'data' },
+            { title: ' Marketing Specialist', location: '', category: 'engineering' },
+            { title: 'Customer Support Representative', location: '', category: 'engineering' },
+            { title: 'Video Content Creator', location: '', category: 'marketing' },
+            { title: 'Marketing and Sales Content Lead', location: '', category: 'marketing' },
+            { title: ' Software Engineer (Business Intelligence)', location: '', category: 'data' },
+            { title: 'Social Media Manager', location: '', category: 'engineering' },
+            { title: 'Print & Branding Designer', location: '', category: 'marketing' },
+            { title: ' User Experience (UX) Designer', location: '', category: 'data' }
+        ];
+
+        function renderJobs(filteredJobs) {
+            const jobsGrid = document.getElementById('jobsGrid');
+            jobsGrid.innerHTML = filteredJobs.map(job => `
+                <div class="job-card">
+                    <h2 class="job-title">${job.title}</h2>
+                    <div class="job-location">
+                        <span></span>
+                        <span>${job.location}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterJobs() {
+            const selectedLocation = document.getElementById('locationFilter').value;
+            const activeCategory = document.querySelector('.tab.active').dataset.category;
+            
+            let filteredJobs = jobs;
+            
+            if (selectedLocation !== 'all') {
+                filteredJobs = filteredJobs.filter(job => job.location === selectedLocation);
+            }
+            
+            if (activeCategory !== 'all') {
+                filteredJobs = filteredJobs.filter(job => job.category === activeCategory);
+            }
+            
+            renderJobs(filteredJobs);
+        }
+
+        // Event Listeners
+        document.getElementById('locationFilter').addEventListener('change', filterJobs);
+        
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                e.target.classList.add('active');
+                filterJobs();
+            });
+        });
+
+        // Initial render
+        renderJobs(jobs);
+    </script>
+</body>
+</html>
