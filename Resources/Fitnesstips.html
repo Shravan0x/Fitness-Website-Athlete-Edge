@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athlete Edge | Fitness Tips</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            padding: 20px;
+            margin: 0;
+        }
+
+        /* Header with branding */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        #branding h1 {
+            font-size: 1rem;
+            color: #f92524;
+            font-family: sans-serif;
+        }
+
+        #branding #logo {
+            width: 50px;
+            margin-top: 10px;
+        }
+        
+
+
+        /* Container for the video gallery */
+        #videoGallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Video thumbnail styles */
+        .video-thumbnail {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: auto;
+            border-bottom: 3px solid #f92524;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .video-thumbnail:hover img {
+            transform: scale(1.05);
+        }
+
+        .video-thumbnail:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Video title and duration */
+        .video-thumbnail p {
+            padding: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .video-thumbnail .duration {
+            font-size: 0.9rem;
+            color: #999;
+            margin-top: 5px;
+        }
+
+        /* Save icon button */
+        .save-btn {
+            background: none;
+            border: none;
+            font-size: 1.0em;
+            color: #f92524;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .save-btn:hover {
+            color: #d41e1e;
+        }
+
+        /* Pagination buttons */
+        #paginationControls {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #prevBtn, #nextBtn {
+            padding: 10px 20px;
+            background-color: #f92524;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 0 10px;
+        }
+
+        #prevBtn:disabled, #nextBtn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        #prevBtn:hover, #nextBtn:hover {
+            background-color: #d41e1e;
+        }
+
+        /* Modal styles */
+        #videoModal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #videoPlayer {
+            width: 80%;
+            height: 80%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Close button inside modal */
+        #closeModal {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            background-color: #f92524;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        #closeModal:hover {
+            background-color: #d41e1e;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with Branding -->
+    <header>
+        <div id="branding">
+            <h1>Watch motivational and fitness videos to stay inspired and reach your goals with expert tips!</h1>
+            <img src="C:\Users\Shravan\Desktop\VAP PROJECT\Main Page\Asset_MainPage\icon logo.avif" alt="Athlete Edge Logo" id="logo"><P>Athlete-Edge</P> <!-- Replace with actual logo -->
+        </div>
+        
+    </header>
+
+    <!-- Video Gallery -->
+    <div id="videoGallery"></div>
+
+    <!-- Pagination Controls -->
+    <div id="paginationControls">
+        <button id="prevBtn" onclick="changePage(-1)">Previous</button>
+        <button id="nextBtn" onclick="changePage(1)">Next</button>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal" onclick="closeModal()">
+        <div id="videoPlayer"></div>
+    </div>
+
+    <script>
+        // List of YouTube video IDs (18 videos)
+        const videos = [
+            { title: "Mentality Training: Saket Gokhale & Ranveer", videoId: "yNbyUd2alyA", duration: "Duration 2:32:06" },
+            { title: "Winning Mindset: Sunil & Raj", videoId: "NNH-RLNyzoM", duration: "Duration 17:47" },
+            { title: "Fitness Myths: 10 Myths Exposed", videoId: "Vk1BC_FvM0o", duration: "Duration 6:03" },
+            { title: "Wellness 101: Health Tips", videoId: "_nuDp-fded8", duration: "Duration 3:27" },
+            { title: "Boosting Mental Health: 5 Tips", videoId: "wOGqlVqyvCM", duration: "Duration 8:00" },
+            { title: "Fitness Components: Health Boost", videoId: "fSNp4xCr694", duration: "Duration 4:47" },
+            { title: "Healthy Lifestyle", videoId: "Cg_GW7yhq20", duration: "Duration 3:12" },
+            { title: "Do You Really Need 10,000 Steps a Day?", videoId: "eEWa7cpiyD8", duration: "Duration 5:26" },
+            { title: "What Causes High Cholesterol?", videoId: "EixIyh1gshM", duration: "Duration 6:48" },
+            { title: "Food Expiration Dates: What You’re Missing", videoId: "jDg8DQl7ZeQ", duration: "Duration 5:05" },
+            { title: "What Happens When You Quit Sugar?", videoId: "86uC5fgraiI", duration: "Duration 4:40" },
+            { title: "Change Your Life: One Step at a Time", videoId: "75d_29QWELk", duration: "Duration 11:30" },
+            { title: "The Optimal Morning Routine", videoId: "gR_f-iwUGY4", duration: "Duration 16:29" },
+            { title: "What makes muscles grow? ", videoId: "2tM1LFFxeKg", duration: "Duration 4:20" },
+            { title: "What Happens If You Don’t Drink Water?", videoId: "9iMGFqMmUFs", duration: "Duration 4:52" },
+            { title: "How Does Alcohol Make You Drunk?", videoId: "gCrmFbgT37I", duration: "Duration 5:26" },
+            { title: "What Happens When You Quit Smoking?", videoId: "o3I0mJ2RfU0", duration: "Duration 3:28" },
+            { title: "37.78x Better: Atomic Habits Summary", videoId: "PZ7lDrwYdZc", duration: "Duration 1:21" }
+        ];
+
+        let currentPage = 0;
+        const videosPerPage = 6;
+
+        // Function to render the video gallery
+        function renderGallery(page = 0) {
+            const startIndex = page * videosPerPage;
+            const endIndex = startIndex + videosPerPage;
+            const videosToDisplay = videos.slice(startIndex, endIndex);
+
+            const videoGallery = document.getElementById('videoGallery');
+            videoGallery.innerHTML = ''; // Clear the current gallery
+
+            videosToDisplay.forEach(video => {
+                const videoElement = document.createElement('div');
+                videoElement.classList.add('video-thumbnail');
+                videoElement.innerHTML = `
+                    <img src="https://img.youtube.com/vi/${video.videoId}/0.jpg" alt="${video.title}" onclick="openModal('${video.videoId}')">
+                    <p>${video.title}</p>
+                    <div class="duration">${video.duration}</div>
+                    <button class="save-btn" onclick="saveVideo('${video.title}')">
+                        <i class="fas fa-bookmark"></i>
+                    </button>
+                `;
+                videoGallery.appendChild(videoElement);
+            });
+
+            // Toggle pagination buttons
+            document.getElementById('prevBtn').disabled = currentPage === 0;
+            document.getElementById('nextBtn').disabled = endIndex >= videos.length;
+        }
+
+        // Save video (functionality to save the video)
+        function saveVideo(videoTitle) {
+            alert(`${videoTitle} has been saved!`);
+            // Here, you can implement the logic to save the video, e.g., adding it to a list or localStorage
+        }
+
+        // Open video modal
+        function openModal(videoId) {
+            const modal = document.getElementById('videoModal');
+            const videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.innerHTML = `<iframe width="100%" height="400" src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+            modal.style.display = 'flex';
+        }
+
+        // Close video modal
+        function closeModal() {
+            const modal = document.getElementById('videoModal');
+            const videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.innerHTML = ''; // Clear the video
+            modal.style.display = 'none';
+        }
+
+        // Change page for pagination
+        function changePage(direction) {
+            currentPage += direction;
+            renderGallery(currentPage);
+        }
+
+        // Initial rendering
+        renderGallery(currentPage);
+    </script>
+</body>
+</html>
