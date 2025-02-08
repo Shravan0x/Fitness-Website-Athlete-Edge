@@ -1,12 +1,12 @@
 // Team members data
 const founders = [
     {
-        name: 'Shravan Parthe',
+        name: 'Shravan',
         role: 'Student / Developer ',
        // image: 'https://via.placeholder.com/80'
     },
     {
-        name: 'Om Pisal',
+        name: 'Sumeet',
         role: 'Student / Developer',
        // image: 'https://via.placeholder.com/80'
     }
@@ -14,23 +14,23 @@ const founders = [
 
 const contentCreators = [
     {
-        name: 'Raj More',
-        role: 'FITNESS',
+        name: 'Akshay',
+        role: 'Student / Editor',
        // image: 'https://via.placeholder.com/80'
     },
     {
-        name: 'Soham Mankawale',
-        role: 'FITNESS',
+        name: 'Vedant',
+        role: 'Student / Social Media Handler',
        // image: 'https://via.placeholder.com/80'
     },
     {
-        name: 'Sumeet Monde',
-        role: 'FITNESS',
+        name: 'Sahil',
+        role: 'Student / Content Creator',
        // image: 'https://via.placeholder.com/80'
     },
     {
-        name: 'Pranav',
-        role: 'FITNESS',
+        name: 'Om',
+        role: 'Student / Fitness Trainer',
        // image: 'https://via.placeholder.com/80'
     }
 ];
